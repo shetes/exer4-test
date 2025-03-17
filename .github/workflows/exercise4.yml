@@ -7,7 +7,7 @@ jobs:
   build: 
     runs-on: ubuntu-latest 
     steps: 
-      - uses: action/checkout@v4
+      - uses: actions/checkout@v4
       - name: Cache 
         uses: actions/cache@v4.2.2 
         with: 
@@ -18,14 +18,14 @@ jobs:
         env:
           CI: true
       - name: Upload code coverage
-        uses: action/upload-artifact@4.6.1
+        uses: actions/upload-artifact@4.6.1
         with:
           name: codecoverage
           path: codecoverage
       - name: build
         run: npm build
       - name: Upload build files
-        uses: action/upload-artifact@4.6.1
+        uses: actions/upload-artifact@4.6.1
         with:
           name: build
           path: build
