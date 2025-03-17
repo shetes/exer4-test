@@ -9,7 +9,7 @@ jobs:
     steps: 
       - uses: action/checkout@v4
       - name: Cache 
-        uses: actions/cache@v4.0.0 
+        uses: actions/cache@v4.2.2 
         with: 
           path: ~/.npm 
           key: buildCache
@@ -18,14 +18,14 @@ jobs:
         env:
           CI: true
       - name: Upload code coverage
-        uses: action/upload-artifact@4.3.1
+        uses: action/upload-artifact@4.6.1
         with:
           name: codecoverage
           path: codecoverage
       - name: build
         run: npm build
       - name: Upload build files
-        uses: action/upload-artifact@3.1.0
+        uses: action/upload-artifact@4.6.1
         with:
           name: build
           path: build
